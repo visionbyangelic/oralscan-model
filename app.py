@@ -15,13 +15,7 @@ st.caption("Upload a dental image for AI-powered oral lesion screening")
 
 @st.cache_resource
 def load_model():
-    import json
-    import keras
-    with open('./model.keras/config.json', 'r') as f:
-        config = json.load(f)
-    model = keras.models.model_from_json(json.dumps(config))
-    model.load_weights('./model.keras/model.weights.h5')
-    return model
+    return tf.keras.models.load_model('./model.keras')
 
 model = load_model()
 
