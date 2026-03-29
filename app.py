@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import keras
+import tensorflow as tf
 
 model = keras.saving.load_model('./model.keras')
 
